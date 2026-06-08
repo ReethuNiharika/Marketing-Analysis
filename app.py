@@ -638,7 +638,7 @@ def main():
         """, unsafe_allow_html=True)
     
     # ========================================================================
-    # SECTION 4: TIKTOK VIDEO (if applicable)
+    # SECTION 4: TIKTOK VIDEO 
     # ========================================================================
     if 'TikTok' in platforms:
         st.markdown("""
