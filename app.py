@@ -1,9 +1,9 @@
 """
 ================================================================================
                     MARKETING INTELLIGENCE DASHBOARD
-                   
+                    Modern Soft Theme | Elegant & Professional
 ================================================================================
-A stunning, executive-ready dashboard with modern design and vibrant colors
+A beautifully balanced dashboard with soft neutral tones and vibrant accents
 """
 
 import streamlit as st
@@ -21,13 +21,13 @@ warnings.filterwarnings('ignore')
 # ============================================================================
 st.set_page_config(
     page_title="Marketing Intelligence Dashboard",
-    page_icon="✨",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
 # ============================================================================
-# PREMIUM CSS - WHITE & VIBRANT THEME
+# MODERN SOFT THEME CSS
 # ============================================================================
 st.markdown("""
 <style>
@@ -38,20 +38,20 @@ st.markdown("""
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    /* Main background */
+    /* Main background - soft neutral */
     .stApp {
-        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        background: linear-gradient(135deg, #f0f4f8 0%, #e8edf3 50%, #eef2f6 100%);
     }
     
-    /* ========== HERO SECTION - VIBRANT ========== */
+    /* ========== HERO SECTION ========== */
     .hero-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        border-radius: 24px;
-        padding: 2rem 2.5rem;
-        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #1a365d 0%, #2563eb 50%, #3b82f6 100%);
+        border-radius: 20px;
+        padding: 1.8rem 2.2rem;
+        margin-bottom: 1.8rem;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 20px 35px -10px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
     }
     
     .hero-section::before {
@@ -61,51 +61,50 @@ st.markdown("""
         right: -10%;
         width: 50%;
         height: 150%;
-        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
         pointer-events: none;
     }
     
     .hero-title {
-        font-size: 2rem;
-        font-weight: 800;
+        font-size: 1.6rem;
+        font-weight: 700;
         color: #ffffff;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.3px;
         margin: 0;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .hero-subtitle {
-        color: rgba(255,255,255,0.85);
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
+        color: rgba(255,255,255,0.8);
+        font-size: 0.85rem;
+        margin-top: 0.4rem;
     }
     
     .hero-badge {
-        background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.15);
         backdrop-filter: blur(10px);
-        padding: 0.5rem 1.2rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 40px;
+        font-size: 0.75rem;
+        color: #ffffff;
         font-weight: 500;
     }
     
-    /* ========== KPI CARDS - MODERN ========== */
+    /* ========== KPI CARDS ========== */
     .kpi-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 1.2rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
+        margin-bottom: 1.8rem;
     }
     
     .kpi-card {
-        background: white;
-        border-radius: 20px;
-        padding: 1.3rem 1rem;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 1.1rem 0.8rem;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        border: 1px solid rgba(102, 126, 234, 0.1);
-        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease;
         position: relative;
         overflow: hidden;
     }
@@ -117,14 +116,14 @@ st.markdown("""
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
         transform: scaleX(0);
-        transition: transform 0.3s ease;
+        transition: transform 0.25s ease;
     }
     
     .kpi-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 25px -8px rgba(102, 126, 234, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1);
     }
     
     .kpi-card:hover::before {
@@ -132,24 +131,24 @@ st.markdown("""
     }
     
     .kpi-label {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #667eea;
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.8px;
+        color: #6c7a91;
+        margin-bottom: 0.4rem;
     }
     
     .kpi-value {
-        font-size: 1.8rem;
-        font-weight: 800;
+        font-size: 1.7rem;
+        font-weight: 700;
         color: #1e293b;
-        margin: 0.3rem 0;
+        margin: 0.2rem 0;
         letter-spacing: -1px;
     }
     
     .kpi-change {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 500;
     }
     
@@ -158,162 +157,165 @@ st.markdown("""
     
     /* ========== SECTION HEADERS ========== */
     .section-header {
-        margin: 2rem 0 1rem 0;
+        margin: 1.8rem 0 1rem 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     
     .section-title {
-        font-size: 1.2rem;
-        font-weight: 700;
+        font-size: 1rem;
+        font-weight: 600;
         color: #1e293b;
-        letter-spacing: -0.3px;
+        letter-spacing: -0.2px;
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
     }
     
-    .section-title-icon {
-        font-size: 1.3rem;
+    .section-line {
+        height: 2px;
+        width: 35px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 2px;
+        margin-top: 0.3rem;
     }
     
-    .section-line {
-        height: 3px;
-        width: 50px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        border-radius: 3px;
-        margin-top: 0.3rem;
+    .section-desc {
+        font-size: 0.7rem;
+        color: #7e8b9d;
     }
     
     /* ========== CHART CARDS ========== */
     .chart-card {
-        background: white;
-        border-radius: 20px;
-        padding: 1.2rem;
-        border: 1px solid #eef2ff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        transition: all 0.3s ease;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        transition: all 0.2s ease;
     }
     
     .chart-card:hover {
-        box-shadow: 0 8px 25px -12px rgba(102, 126, 234, 0.15);
-        border-color: rgba(102, 126, 234, 0.2);
+        box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.08);
+        border-color: rgba(59, 130, 246, 0.15);
     }
     
     .chart-title {
-        font-weight: 600;
-        font-size: 0.85rem;
-        color: #64748b;
-        margin-bottom: 1rem;
-        letter-spacing: 0.3px;
+        font-weight: 500;
+        font-size: 0.8rem;
+        color: #5a6a7e;
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.2px;
     }
     
-    /* ========== INSIGHT CARD - VIBRANT ========== */
+    /* ========== INSIGHT CARD ========== */
     .insight-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 20px;
-        padding: 1.3rem;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border-radius: 18px;
+        padding: 1.2rem;
         color: white;
         height: 100%;
-        box-shadow: 0 10px 25px -8px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.15);
     }
     
     .insight-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255,255,255,0.7);
+        letter-spacing: 1.5px;
+        color: #8b5cf6;
+        margin-bottom: 0.5rem;
     }
     
     .insight-number {
-        font-size: 1.8rem;
-        font-weight: 800;
+        font-size: 1.5rem;
+        font-weight: 700;
         margin: 0.3rem 0;
     }
     
     .insight-text {
-        font-size: 0.75rem;
-        opacity: 0.9;
+        font-size: 0.7rem;
+        opacity: 0.8;
     }
     
     /* ========== RECOMMENDATION CARDS ========== */
     .rec-card {
-        background: white;
+        background: #ffffff;
         border-radius: 16px;
         padding: 1rem;
-        border-left: 4px solid;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        transition: all 0.3s ease;
+        border-left: 3px solid;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
         height: 100%;
     }
     
     .rec-card:hover {
-        transform: translateX(5px);
-        box-shadow: 0 8px 20px -12px rgba(0,0,0,0.15);
+        transform: translateX(4px);
+        box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.1);
     }
     
     .rec-number {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #667eea;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #3b82f6;
     }
     
     .rec-title {
-        font-weight: 700;
-        font-size: 0.9rem;
+        font-weight: 600;
+        font-size: 0.85rem;
         margin: 0.3rem 0;
         color: #1e293b;
     }
     
     .rec-text {
-        font-size: 0.7rem;
-        color: #64748b;
+        font-size: 0.65rem;
+        color: #5a6a7e;
         line-height: 1.4;
     }
     
     /* ========== STAT CARDS ========== */
     .stat-card {
-        background: linear-gradient(145deg, #f8fafc, #ffffff);
+        background: #ffffff;
         border-radius: 16px;
         padding: 0.8rem;
         text-align: center;
-        border: 1px solid #eef2ff;
-        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        transition: all 0.2s ease;
     }
     
     .stat-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.08);
+        border-color: rgba(59, 130, 246, 0.2);
     }
     
     /* ========== FOOTER ========== */
     .footer {
         text-align: center;
         padding: 1.5rem;
-        font-size: 0.7rem;
-        color: #94a3b8;
-        border-top: 1px solid #eef2ff;
+        font-size: 0.65rem;
+        color: #8a9ab0;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
         margin-top: 2rem;
     }
     
     /* ========== UTILITIES ========== */
-    .hide-streamlit {
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-    }
-    
     hr {
         margin: 0.5rem 0;
-        border-color: #eef2ff;
+        border-color: rgba(0, 0, 0, 0.06);
     }
     
     /* Custom selectbox */
     .stSelectbox > div {
-        background-color: white;
+        background-color: #ffffff;
         border-radius: 12px;
-        border: 1px solid #eef2ff;
+        border: 1px solid #e2e8f0;
+    }
+    
+    /* Data table styling */
+    .stDataFrame {
+        background: transparent;
     }
     
     /* Hide Streamlit branding */
@@ -408,11 +410,11 @@ def main():
     <div class="hero-section">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
             <div>
-                <div class="hero-title">✨ Marketing Intelligence Dashboard</div>
+                <div class="hero-title">Marketing Intelligence Dashboard</div>
                 <div class="hero-subtitle">Enterprise Performance Analytics · {min_date.strftime('%B %d, %Y')} – {max_date.strftime('%B %d, %Y')}</div>
             </div>
             <div class="hero-badge">
-                📊 {days} Days Analyzed
+                {days} Days Analyzed
             </div>
         </div>
     </div>
@@ -426,7 +428,7 @@ def main():
     with col1:
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">💰 TOTAL SPEND</div>
+            <div class="kpi-label">TOTAL SPEND</div>
             <div class="kpi-value">{format_currency(total_spend)}</div>
             <div class="kpi-change positive">▲ +8.2% vs prior</div>
         </div>
@@ -435,7 +437,7 @@ def main():
     with col2:
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">🎯 CONVERSIONS</div>
+            <div class="kpi-label">CONVERSIONS</div>
             <div class="kpi-value">{format_number(total_conv)}</div>
             <div class="kpi-change positive">▲ +14.5% vs prior</div>
         </div>
@@ -444,7 +446,7 @@ def main():
     with col3:
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">💵 COST PER ACQUISITION</div>
+            <div class="kpi-label">COST PER ACQUISITION</div>
             <div class="kpi-value">${cpa:.2f}</div>
             <div class="kpi-change negative">▼ -5.2% improvement</div>
         </div>
@@ -453,7 +455,7 @@ def main():
     with col4:
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">📊 CLICK-THROUGH RATE</div>
+            <div class="kpi-label">CLICK-THROUGH RATE</div>
             <div class="kpi-value">{ctr:.2f}%</div>
             <div class="kpi-change positive">▲ +0.8pp vs prior</div>
         </div>
@@ -462,7 +464,7 @@ def main():
     with col5:
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">📈 DAILY AVG SPEND</div>
+            <div class="kpi-label">DAILY AVG SPEND</div>
             <div class="kpi-value">{format_currency(avg_daily)}</div>
             <div class="kpi-change positive">▲ +6.2% vs prior</div>
         </div>
@@ -474,7 +476,7 @@ def main():
     st.markdown("---")
     filter_col1, filter_col2 = st.columns([1, 3])
     with filter_col1:
-        selected = st.selectbox("🔍 Filter by Channel", ['All Channels', 'Facebook', 'Google', 'TikTok'], index=0)
+        selected = st.selectbox("Filter by Channel", ['All Channels', 'Facebook', 'Google', 'TikTok'], index=0)
     
     platforms = ['Facebook', 'Google', 'TikTok'] if selected == 'All Channels' else [selected]
     
@@ -487,10 +489,10 @@ def main():
     st.markdown("""
     <div class="section-header">
         <div>
-            <div class="section-title"><span class="section-title-icon">📈</span> Performance Trends</div>
+            <div class="section-title">Performance Trends</div>
             <div class="section-line"></div>
         </div>
-        <div style="font-size: 0.7rem; color: #94a3b8;">Daily spend & conversion velocity</div>
+        <div class="section-desc">Daily spend & conversion velocity</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -510,7 +512,9 @@ def main():
         fig1.update_layout(
             height=350, margin=dict(l=40, r=20, t=30, b=30),
             legend=dict(orientation='h', y=1.02),
-            plot_bgcolor='white', yaxis_title='Ad Spend ($)',
+            plot_bgcolor='white', paper_bgcolor='white',
+            yaxis_title='Ad Spend ($)',
+            xaxis_title='',
             hovermode='x unified'
         )
         fig1.update_xaxes(showgrid=False)
@@ -531,7 +535,9 @@ def main():
         fig2.update_layout(
             height=350, margin=dict(l=40, r=20, t=30, b=30),
             legend=dict(orientation='h', y=1.02),
-            plot_bgcolor='white', yaxis_title='Conversions',
+            plot_bgcolor='white', paper_bgcolor='white',
+            yaxis_title='Conversions',
+            xaxis_title='',
             hovermode='x unified'
         )
         fig2.update_xaxes(showgrid=False)
@@ -544,10 +550,10 @@ def main():
     st.markdown("""
     <div class="section-header">
         <div>
-            <div class="section-title"><span class="section-title-icon">🎯</span> Channel Performance</div>
+            <div class="section-title">Channel Performance</div>
             <div class="section-line"></div>
         </div>
-        <div style="font-size: 0.7rem; color: #94a3b8;">Budget, efficiency & engagement</div>
+        <div class="section-desc">Budget, efficiency & engagement</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -557,10 +563,14 @@ def main():
         spend_by = filtered_df.groupby('platform')['cost'].sum().reset_index()
         fig3 = go.Figure(data=[go.Pie(
             labels=spend_by['platform'], values=spend_by['cost'],
-            hole=0.55, marker=dict(colors=[COLORS.get(p, '#888') for p in spend_by['platform']],
-            line=dict(color='white', width=2)), textinfo='label+percent', showlegend=False
+            hole=0.55, 
+            marker=dict(colors=[COLORS.get(p, '#888') for p in spend_by['platform']],
+                       line=dict(color='white', width=2)), 
+            textinfo='label+percent', 
+            showlegend=False
         )])
-        fig3.update_layout(height=320, margin=dict(l=10, r=10, t=20, b=10))
+        fig3.update_layout(height=320, margin=dict(l=10, r=10, t=20, b=10),
+                          plot_bgcolor='white', paper_bgcolor='white')
         st.plotly_chart(fig3, use_container_width=True)
     
     with col2:
@@ -574,9 +584,11 @@ def main():
         fig4 = go.Figure(data=[go.Bar(
             x=cpa_df['platform'], y=cpa_df['cpa'],
             marker_color=[COLORS.get(p, '#888') for p in cpa_df['platform']],
-            text=cpa_df['cpa'].apply(lambda x: f'${x:.2f}'), textposition='outside'
+            text=cpa_df['cpa'].apply(lambda x: f'${x:.2f}'), 
+            textposition='outside'
         )])
-        fig4.update_layout(height=320, yaxis_title='Cost Per Acquisition ($)', plot_bgcolor='white')
+        fig4.update_layout(height=320, yaxis_title='Cost Per Acquisition ($)', 
+                          plot_bgcolor='white', paper_bgcolor='white')
         fig4.update_xaxes(showgrid=False)
         fig4.update_yaxes(showgrid=True, gridcolor='#f1f5f9')
         st.plotly_chart(fig4, use_container_width=True)
@@ -592,9 +604,11 @@ def main():
         fig5 = go.Figure(data=[go.Bar(
             x=ctr_df['platform'], y=ctr_df['ctr'],
             marker_color=[COLORS.get(p, '#888') for p in ctr_df['platform']],
-            text=ctr_df['ctr'].apply(lambda x: f'{x:.2f}%'), textposition='outside'
+            text=ctr_df['ctr'].apply(lambda x: f'{x:.2f}%'), 
+            textposition='outside'
         )])
-        fig5.update_layout(height=320, yaxis_title='Click-Through Rate (%)', plot_bgcolor='white')
+        fig5.update_layout(height=320, yaxis_title='Click-Through Rate (%)', 
+                          plot_bgcolor='white', paper_bgcolor='white')
         fig5.update_xaxes(showgrid=False)
         fig5.update_yaxes(showgrid=True, gridcolor='#f1f5f9')
         st.plotly_chart(fig5, use_container_width=True)
@@ -605,10 +619,10 @@ def main():
     st.markdown("""
     <div class="section-header">
         <div>
-            <div class="section-title"><span class="section-title-icon">🏆</span> Campaign Intelligence</div>
+            <div class="section-title">Campaign Intelligence</div>
             <div class="section-line"></div>
         </div>
-        <div style="font-size: 0.7rem; color: #94a3b8;">Top performers & strategic insights</div>
+        <div class="section-desc">Top performers & strategic insights</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -625,29 +639,29 @@ def main():
     with col2:
         st.markdown(f"""
         <div class="insight-card">
-            <div class="insight-label">⚡ EXECUTIVE SUMMARY</div>
+            <div class="insight-label">EXECUTIVE SUMMARY</div>
             <div class="insight-number">${best_cpa:.2f}</div>
             <div class="insight-text">Lowest CPA · {best_platform}</div>
-            <hr style="background: rgba(255,255,255,0.2); margin: 1rem 0;">
+            <hr style="background: rgba(255,255,255,0.1); margin: 1rem 0;">
             <div style="display: flex; justify-content: space-between;">
-                <div><span style="font-size: 1.2rem; font-weight: 700;">{google_roas:.1f}x</span><br><span style="font-size: 0.65rem;">Google ROAS</span></div>
-                <div><span style="font-size: 1.2rem; font-weight: 700;">{format_number(total_conv)}</span><br><span style="font-size: 0.65rem;">Conversions</span></div>
-                <div><span style="font-size: 1.2rem; font-weight: 700;">{tiktok_completion:.0f}%</span><br><span style="font-size: 0.65rem;">TikTok Completion</span></div>
+                <div><span style="font-size: 1.1rem; font-weight: 700;">{google_roas:.1f}x</span><br><span style="font-size: 0.6rem;">Google ROAS</span></div>
+                <div><span style="font-size: 1.1rem; font-weight: 700;">{format_number(total_conv)}</span><br><span style="font-size: 0.6rem;">Conversions</span></div>
+                <div><span style="font-size: 1.1rem; font-weight: 700;">{tiktok_completion:.0f}%</span><br><span style="font-size: 0.6rem;">TikTok Completion</span></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
     
     # ========================================================================
-    # SECTION 4: TIKTOK VIDEO 
+    # SECTION 4: TIKTOK VIDEO
     # ========================================================================
     if 'TikTok' in platforms:
         st.markdown("""
         <div class="section-header">
             <div>
-                <div class="section-title"><span class="section-title-icon">🎬</span> Video Performance</div>
+                <div class="section-title">Video Performance</div>
                 <div class="section-line"></div>
             </div>
-            <div style="font-size: 0.7rem; color: #94a3b8;">TikTok retention & engagement</div>
+            <div class="section-desc">TikTok retention & engagement</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -668,9 +682,10 @@ def main():
             fig6 = go.Figure(go.Funnel(
                 y=funnel_data['Stage'], x=funnel_data['Count'],
                 textinfo='value+percent initial', textposition='inside',
-                marker=dict(color=['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe'])
+                marker=dict(color=['#3b82f6', '#8b5cf6', '#ec4899', '#f97316', '#10b981'])
             ))
-            fig6.update_layout(height=380, margin=dict(l=0, r=0, t=20, b=20))
+            fig6.update_layout(height=380, margin=dict(l=0, r=0, t=20, b=20),
+                              plot_bgcolor='white', paper_bgcolor='white')
             st.plotly_chart(fig6, use_container_width=True)
         
         with col2:
@@ -685,10 +700,12 @@ def main():
             
             fig7 = go.Figure(data=[go.Bar(
                 x=engage_data['Type'], y=engage_data['Count'],
-                marker_color=['#667eea', '#764ba2', '#f093fb'],
-                text=engage_data['Count'].apply(lambda x: format_number(x)), textposition='outside'
+                marker_color=['#3b82f6', '#8b5cf6', '#ec4899'],
+                text=engage_data['Count'].apply(lambda x: format_number(x)), 
+                textposition='outside'
             )])
-            fig7.update_layout(height=250, yaxis_title='Count', plot_bgcolor='white')
+            fig7.update_layout(height=250, yaxis_title='Count', 
+                              plot_bgcolor='white', paper_bgcolor='white')
             fig7.update_xaxes(showgrid=False)
             fig7.update_yaxes(showgrid=True, gridcolor='#f1f5f9')
             st.plotly_chart(fig7, use_container_width=True)
@@ -696,8 +713,8 @@ def main():
             completion_rate = tiktok['completion_rate'].mean()
             fig8 = go.Figure(go.Indicator(
                 mode="gauge+number", value=completion_rate,
-                title={'text': "Completion Rate", 'font': {'size': 12}},
-                gauge={'axis': {'range': [0, 100]}, 'bar': {'color': '#667eea'},
+                title={'text': "Completion Rate", 'font': {'size': 12, 'color': '#475569'}},
+                gauge={'axis': {'range': [0, 100]}, 'bar': {'color': '#8b5cf6'},
                        'steps': [
                            {'range': [0, 30], 'color': '#fee2e2'},
                            {'range': [30, 60], 'color': '#fef3c7'},
@@ -713,10 +730,10 @@ def main():
     st.markdown("""
     <div class="section-header">
         <div>
-            <div class="section-title"><span class="section-title-icon">💡</span> Strategic Recommendations</div>
+            <div class="section-title">Strategic Recommendations</div>
             <div class="section-line"></div>
         </div>
-        <div style="font-size: 0.7rem; color: #94a3b8;">Data-driven actions for next quarter</div>
+        <div class="section-desc">Data-driven actions for next quarter</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -724,16 +741,16 @@ def main():
     
     with rec1:
         st.markdown(f"""
-        <div class="rec-card" style="border-left-color: #667eea;">
+        <div class="rec-card" style="border-left-color: #3b82f6;">
             <div class="rec-number">01 · Budget Reallocation</div>
-            <div class="rec-title">Shift Facebook → TikTok</div>
+            <div class="rec-title">Shift Facebook to TikTok</div>
             <div class="rec-text">Reallocate 15% of Facebook budget to TikTok (${platform_cpa.get('TikTok', 0):.2f} vs ${platform_cpa.get('Facebook', 0):.2f} CPA). Expected +12% conversions.</div>
         </div>
         """, unsafe_allow_html=True)
     
     with rec2:
         st.markdown(f"""
-        <div class="rec-card" style="border-left-color: #34A853;">
+        <div class="rec-card" style="border-left-color: #10b981;">
             <div class="rec-number">02 · Scale Google</div>
             <div class="rec-title">Google Shopping Expansion</div>
             <div class="rec-text">ROAS at {google_roas:.1f}x exceeds target by 30%. Increase budget by 20% for incremental revenue.</div>
@@ -742,7 +759,7 @@ def main():
     
     with rec3:
         st.markdown(f"""
-        <div class="rec-card" style="border-left-color: #1A1A1A;">
+        <div class="rec-card" style="border-left-color: #ec4899;">
             <div class="rec-number">03 · Creative Refresh</div>
             <div class="rec-title">TikTok Optimization</div>
             <div class="rec-text">Completion at {tiktok_completion:.0f}%. Test hooks in first 3 seconds. Expected +15-20% retention.</div>
@@ -755,7 +772,7 @@ def main():
     st.markdown("""
     <div class="section-header">
         <div>
-            <div class="section-title"><span class="section-title-icon">📌</span> Key Takeaways</div>
+            <div class="section-title">Key Takeaways</div>
             <div class="section-line"></div>
         </div>
     </div>
@@ -766,10 +783,10 @@ def main():
     with t1:
         st.markdown(f"""
         <div class="stat-card">
-            <div style="font-size: 1.8rem;">🎯</div>
-            <div style="font-weight: 700;">{best_platform}</div>
-            <div style="font-size: 0.7rem; color: #64748b;">Most Efficient</div>
-            <div style="color: #10b981; font-weight: 700;">${best_cpa:.2f} CPA</div>
+            <div style="font-size: 1.5rem;">🎯</div>
+            <div style="font-weight: 600;">{best_platform}</div>
+            <div style="font-size: 0.65rem; color: #6c7a91;">Most Efficient</div>
+            <div style="color: #10b981; font-weight: 600;">${best_cpa:.2f} CPA</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -777,30 +794,30 @@ def main():
         top_cpa_val = top_campaigns.iloc[0]['cpa'] if len(top_campaigns) > 0 else 0
         st.markdown(f"""
         <div class="stat-card">
-            <div style="font-size: 1.8rem;">🏆</div>
-            <div style="font-weight: 700;">Best Campaign</div>
-            <div style="font-size: 0.7rem; color: #64748b;">Lowest CPA</div>
-            <div style="color: #10b981; font-weight: 700;">${top_cpa_val:.2f}</div>
+            <div style="font-size: 1.5rem;">🏆</div>
+            <div style="font-weight: 600;">Best Campaign</div>
+            <div style="font-size: 0.65rem; color: #6c7a91;">Lowest CPA</div>
+            <div style="color: #10b981; font-weight: 600;">${top_cpa_val:.2f}</div>
         </div>
         """, unsafe_allow_html=True)
     
     with t3:
         st.markdown(f"""
         <div class="stat-card">
-            <div style="font-size: 1.8rem;">💰</div>
-            <div style="font-weight: 700;">Total Investment</div>
-            <div style="font-size: 0.7rem; color: #64748b;">January 2024</div>
-            <div style="font-weight: 600;">{format_currency(total_spend)}</div>
+            <div style="font-size: 1.5rem;">💰</div>
+            <div style="font-weight: 600;">Total Investment</div>
+            <div style="font-size: 0.65rem; color: #6c7a91;">January 2024</div>
+            <div style="font-weight: 500;">{format_currency(total_spend)}</div>
         </div>
         """, unsafe_allow_html=True)
     
     with t4:
         st.markdown(f"""
         <div class="stat-card">
-            <div style="font-size: 1.8rem;">🚀</div>
-            <div style="font-weight: 700;">Growth Rate</div>
-            <div style="font-size: 0.7rem; color: #64748b;">vs prior period</div>
-            <div style="color: #10b981; font-weight: 700;">+14.5%</div>
+            <div style="font-size: 1.5rem;">🚀</div>
+            <div style="font-weight: 600;">Growth Rate</div>
+            <div style="font-size: 0.65rem; color: #6c7a91;">vs prior period</div>
+            <div style="color: #10b981; font-weight: 600;">+14.5%</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -809,8 +826,7 @@ def main():
     # ========================================================================
     st.markdown(f"""
     <div class="footer">
-        <strong>Marketing Intelligence Dashboard</strong><br>
-        Data Period: {min_date.strftime('%B %d, %Y')} — {max_date.strftime('%B %d, %Y')}<br>
+        Marketing Intelligence Dashboard | Data Period: {min_date.strftime('%B %d, %Y')} — {max_date.strftime('%B %d, %Y')}<br>
         Generated: {datetime.now().strftime('%B %d, %Y at %I:%M %p')}
     </div>
     """, unsafe_allow_html=True)
